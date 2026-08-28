@@ -1,0 +1,100 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-bg: #f3ebe0;
+  --color-surface: #fbf6ee;
+  --color-card: #fff9f2;
+  --color-fg: #2a1c14;
+  --color-muted: #6e5748;
+  --color-primary: #9a3c1e;
+  --color-primary-fg: #fbf6ee;
+  --color-border: #e2d3c2;
+  --color-ring: #9a3c1e;
+  --color-background: #f3ebe0;
+  --color-foreground: #2a1c14;
+  --color-card-foreground: #2a1c14;
+  --color-muted-foreground: #6e5748;
+  --color-accent: #3f4a3c;
+  --color-accent-foreground: #f3ebe0;
+  --color-destructive: #8b2e1f;
+  --color-input: #e2d3c2;
+  --color-popover: #fff9f2;
+  --color-popover-foreground: #2a1c14;
+  --color-secondary: #efe4d4;
+  --color-secondary-foreground: #2a1c14;
+
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+
+  --radius: 0.75rem;
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  --shadow-border:
+    0 0 0 1px rgb(42 28 20 / 0.06),
+    0 1px 2px -1px rgb(42 28 20 / 0.06),
+    0 2px 8px 0 rgb(42 28 20 / 0.04);
+  --shadow-border-hover:
+    0 0 0 1px rgb(42 28 20 / 0.1),
+    0 4px 16px -2px rgb(42 28 20 / 0.1);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    min-height: 100dvh;
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    line-height: 1.55;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  img {
+    outline: 1px solid rgb(42 28 20 / 0.08);
+    outline-offset: -1px;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 22%, transparent);
+    color: var(--color-fg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
